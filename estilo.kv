@@ -1,0 +1,246 @@
+<InicioPantalla>:
+    canvas.before:
+        Color:
+            rgba: 0.99, 0.8, 0.29, 1
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: dp(10)
+        padding: dp(10)
+
+        Label:
+            id: welcome_label
+            text: '¡Bienvenido a la aplicación de encuestas!'
+            font_size: dp(24)
+            color: 0.04, 0.25, 0.48, 1
+
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: dp(5)
+            size_hint_y: None
+            height: dp(100)
+
+            TextInput:
+                id: username
+                hint_text: 'Nombre de usuario'
+                background_color: 1, 1, 1, 1
+                foreground_color: 0, 0, 0, 1
+                on_text_validate: password.focus = True
+
+            TextInput:
+                id: password
+                hint_text: 'Contraseña'
+                password: True
+                background_color: 1, 1, 1, 1
+                foreground_color: 0, 0, 0, 1
+                on_text_validate: btn_login.focus = True
+
+            Button:
+                id: btn_login
+                text: 'Iniciar sesión'
+                background_color: 0.84, 0.21, 0.07, 1
+                on_press: root.comprobando_usuario(username.text, password.text)
+                color: 1, 1, 1, 1
+
+<MenuUsuario>:
+    canvas.before:
+        Color:
+            rgba: 0.1, 0.24, 0.47, 1
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: dp(10)
+        padding: dp(10)
+
+        Label:
+            text: f'¡Hola, {root.username}!'
+            font_size: dp(24)
+            color: 0.98, 0.75, 0.29, 1
+
+        Label:
+            text: f'Encuestas restantes: {root.encuestas_restantes}'
+            font_size: dp(18)
+            color: 1, 1, 1, 1
+
+        Button:
+            text: 'Realizar encuesta'
+            background_normal: 'button_normal.png'
+            background_down: 'button_down.png'
+            background_color: 0.84, 0.21, 0.07, 1
+            color: 1, 1, 1, 1
+            on_press: root.realizar_encuesta()
+
+        Button:
+            text: 'Sincronizar con la base de datos'
+            background_normal: 'button_normal.png'
+            background_down: 'button_down.png'
+            background_color: 0.84, 0.21, 0.07, 1
+            color: 1, 1, 1, 1
+            on_press: root.sincronizar_bd()
+
+
+<SeleccionDomicilio>:
+    canvas.before:
+        Color:
+            rgba: 0.1, 0.24, 0.47, 1
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: dp(10)
+        padding: dp(10)
+
+        Label:
+            text: 'Selecciona el domicilio'
+            font_size: dp(24)
+            color: 0.98, 0.75, 0.29, 1
+
+        BoxLayout:
+            id: domicilios_container
+            orientation: 'vertical'
+            spacing: dp(5)
+            size_hint_y: None
+            height: self.minimum_height
+
+<DomicilioEncuesta>:
+    canvas.before:
+        Color:
+            rgba: 0.1, 0.24, 0.47, 1
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: dp(10)
+        padding: dp(10)
+
+        Label:
+            id: pregunta
+            text: root.preguntas[root.pregunta_actual]
+            font_size: dp(18)
+            color: 1, 1, 1, 1
+
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: dp(5)
+            size_hint_y: None
+            height: dp(100)
+
+            Button:
+                text: 'Opción 1'
+                background_normal: 'button_normal.png'
+                background_down: 'button_down.png'
+                background_color: 0.84, 0.21, 0.07, 1
+                color: 1, 1, 1, 1
+                on_press: root.seleccionar_opcion(1)
+
+            Button:
+                text: 'Opción 2'
+                background_normal: 'button_normal.png'
+                background_down: 'button_down.png'
+                background_color: 0.84, 0.21, 0.07, 1
+                color: 1, 1, 1, 1
+                on_press: root.seleccionar_opcion(2)
+
+            Button:
+                text: 'Opción 3'
+                background_normal: 'button_normal.png'
+                background_down: 'button_down.png'
+                background_color: 0.84, 0.21, 0.07, 1
+                color: 1, 1, 1, 1
+                on_press: root.seleccionar_opcion(3)
+
+        Button:
+            text: 'Siguiente pregunta'
+            background_normal: 'button_normal.png'
+            background_down: 'button_down.png'
+            background_color: 0.84, 0.21, 0.07, 1
+            color: 1, 1, 1, 1
+            on_press: root.siguiente_pregunta()
+
+<PreguntasEncuesta>:
+    canvas.before:
+        Color:
+            rgba: 0.1, 0.24, 0.47, 1
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: dp(10)
+        padding: dp(10)
+
+        Label:
+            text: root.domicilio
+            font_size: dp(24)
+            color: 0.98, 0.75, 0.29, 1
+
+        Label:
+            id: pregunta_label  # Renombrado del id
+            text: root.preguntas[root.pregunta_actual]
+            font_size: dp(18)
+            color: 1, 1, 1, 1
+
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: dp(5)
+            size_hint_y: None
+            height: dp(100)
+
+            Button:
+                text: 'Opción 1'
+                background_normal: 'button_normal.png'
+                background_down: 'button_down.png'
+                background_color: 0.84, 0.21, 0.07, 1
+                color: 1, 1, 1, 1
+                on_press: root.avanzar_pregunta()
+
+            Button:
+                text: 'Opción 2'
+                background_normal: 'button_normal.png'
+                background_down: 'button_down.png'
+                background_color: 0.84, 0.21, 0.07, 1
+                color: 1, 1, 1, 1
+                on_press: root.avanzar_pregunta()
+
+            Button:
+                text: 'Opción 3'
+                background_normal: 'button_normal.png'
+                background_down: 'button_down.png'
+                background_color: 0.84, 0.21, 0.07, 1
+                color: 1, 1, 1, 1
+                on_press: root.avanzar_pregunta()
+
+        Button:
+            text: 'Siguiente pregunta'
+            background_normal: 'button_normal.png'
+            background_down: 'button_down.png'
+            background_color: 0.84, 0.21, 0.07, 1
+            color: 1, 1, 1, 1
+            on_press: root.avanzar_pregunta()
+
+        Button:
+            text: 'Finalizar encuesta'
+            background_normal: 'button_normal.png'
+            background_down: 'button_down.png'
+            background_color: 0.84, 0.21, 0.07, 1
+            color: 1, 1, 1, 1
+            on_press: root.finalizar_encuesta()
+
+<SyncScreen>:
+    canvas.before:
+        Color:
+            rgba: 0.1, 0.24, 0.47, 1
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Sincronizando...'

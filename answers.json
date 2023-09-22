@@ -1,0 +1,674 @@
+{
+    "A.1": null,
+    "A.2": {
+        "1": "Masculino",
+        "2": "Femenino",
+        "3": "No binario",
+        "4": "Otro"
+    },
+    "A.3": {
+        "1": "1 a 3 personas",
+        "2": "4 a 8 personas",
+        "3": "Más de 8 personas"
+    },
+    "B.1": {
+        "1": "Casa",
+        "2": "Rancho",
+        "3": "Casilla",
+        "4": "Departamento",
+        "5": "Pieza en inquilinato",
+        "6": "Pieza en hotel familiar o pensión",
+        "7": "Local no construido para habitación",
+        "8": "Vivienda móvil",
+        "9": "Situación de calle"
+    },
+    "B.2": {
+        "1": "Mosaico, madera, cerámica, alfombra o baldosa plásticas.",
+        "2": "Cemento o ladrillo fijo",
+        "3": "Ladrillo suelto o tierra",
+        "4": "Otro"
+    },
+    "B.3": {
+        "1": "Cubierta asfáltica o membrana",
+        "2": "Baldosa o losa (sin cubierta)",
+        "3": "Pizarra o teja",
+        "4": "Chapa de metal (sin cubierta)",
+        "5": "Chapa de fibrocemento o plástico",
+        "6": "Chapa de cartón",
+        "7": "Caña, palma, tabla o paja con o sin barro",
+        "8": "Otro",
+        "9": "Ns/Nc"
+    },
+    "B.4": {
+        "1": "Si",
+        "2": "No"
+    },
+    "B.5": {
+        "1": "Dentro de la vivienda",
+        "2": "Fuera de la vivienda, dentro del terreno",
+        "3": "Fuera del terreno"
+    },
+    "B.6": {
+        "1": "Red pública",
+        "2": "Perforación con bomba motor",
+        "3": "Perforación con bomba manual",
+        "4": "Pozo",
+        "5": "Transporte por cisterna",
+        "6": "Agua de lluvia, río, canal, arroyo o acequia",
+        "7": "Otro",
+        "8": "Ns/Nc"
+    },
+    "B.7": {
+        "1": "Dentro de la vivienda",
+        "2": "Fuera de la vivienda",
+        "3": "No tiene baño"
+    },
+    "B.8": {
+        "1": "Inodoro con botón o cadena de arrastre de agua",
+        "2": "Inodoro sin botón o cadena de arrastre de agua",
+        "3": "No tienen inodoro"
+    },
+    "B.9": {
+        "1": "A red pública (cloaca)",
+        "2": "A cámara séptica y pozo ciego",
+        "3": "Sólo a pozo ciego",
+        "4": "A hoyo, excavación en la tierra, etc.",
+        "5": "Otro",
+        "6": "Ns/Nc"
+    },
+    "B.10": {
+        "1": "Si con medidor",
+        "2": "Si sin medidor",
+        "3": "No tiene electricidad",
+        "4": "Ns/Nc"
+    },
+    "B.11": {
+        "1": "Gas de red",
+        "2": "Gas a granel (zeppelin)",
+        "3": "Gas en tubo",
+        "4": "Gas en garrafa sin subsidio",
+        "5": "Gas en garrafa con subsidio estatal",
+        "6": "Electricidad",
+        "7": "Leña o carbón",
+        "8": "Otro"
+    },
+    "B.12": null,
+    "B.13": {
+        "1": "Propietario del terreno y la vivienda",
+        "2": "Propietario de la vivienda solamente",
+        "3": "Inquilino",
+        "4": "Otorgada como parte de los beneficios laborales",
+        "5": "Préstamo / cesión",
+        "6": "Ocupante de hecho",
+        "7": "Otro",
+        "8": "Ns/Nc"
+    },
+    "B.15": {
+        "1": "Si",
+        "2": "No",
+        "3": "Ns/Nc"
+    },
+    "B.16": {
+        "1": "Si",
+        "2": "No",
+        "3": "Ns/Nc"
+    },
+    "B.17": {
+        "1": "Si",
+        "2": "No",
+        "3": "Ns/Nc"
+    },
+    "B.18": {
+        "1": "Si",
+        "2": "No",
+        "3": "Ns/Nc"
+    },
+    "B.19": {
+        "1": "Si",
+        "2": "No",
+        "3": "Ns/Nc"
+    },
+    "B.20": {
+        "1": "Si",
+        "2": "No",
+        "3": "Ns/Nc"
+    },
+    "B.21": {
+        "1": "Si, una",
+        "2": "Si, más de una",
+        "3": "No",
+        "4": "Ns/Nc"
+    },
+    "B.22": {
+        "1": "Si",
+        "2": "No",
+        "3": "Ns/Nc"
+        },
+    "C.1": {
+        "1": "Asignación Universal por Embarazo",
+        "2": "Asignación Universal por Discapacidad",
+        "3": "Pensiones no Contributivas (Madres de 7 hijos, Inválidez, Transplantes, otras)",
+        "4": "Becas Progresar",
+        "5": "Tarjetas, tickets, bonos para compra de alimentos (No incluye Tarjeta Alimentar)",
+        "6": "Plan Provincial/ Municipal [Especificar]",
+        "7": "Tarjeta Alimentar",
+        "8": "Potenciar Trabajo, seguro de capacitación y empleo (Hacemos Futuro, etc)",
+        "9": "SUMAR",
+        "10": "Pensión Universal por Adulto Mayor - PUAM",
+        "11": "Recibe subsidio, tarifa social o descuento por electricidad",
+        "12": "Recibe subsidio, tarifa social o descuento por gas",
+        "13": "Recibe subsidio, tarifa social o descuento por transporte",
+        "14": "Recibe subsidio, tarifa social o descuento por agua",
+        "15": "No recuerda plan/programa",
+        "16": "No tiene ninguno",
+        "17": "Otros (Especificar)"
+    },
+    "C.2": {
+        "1": "Sí",
+        "2": "No",
+        "3": "Ns/ Nc"
+    },
+    "C.3": {
+        "1": "Comida/ vianda en comedor comunitario",
+        "2": "Merienda o desayuno en un espacio comunitario",
+        "3": "Comida/ vianda en comedor escolar",
+        "4": "Merienda o desayuno en un comedor escolar",
+        "5": "Anticonceptivos",
+        "6": "Libros y/o útiles escolares",
+        "7": "Ninguno"
+    },
+    "D.1": {
+        "1": "Sí",
+        "2": "No",
+        "3": "Ns/Nc"
+    },
+    "D.2": {
+        "1": "Va a la escuela, universidad o institución \nde cuidado infantil",
+        "2": "No va pero fue",
+        "3": "Nunca fue",
+        "4": "Ns/Nc"
+    },
+    "D.3": {
+        "1": "Inicial (Establecimiento de primera infancia \n- Jardín - preescolar)",
+        "2": "Primario incompleto",
+        "3": "Primaria completa",
+        "4": "EGB incompleto",
+        "5": "EGB completo",
+        "6": "Secundario incompleto",
+        "7": "Secundario completo",
+        "8": "Polimodal incompleto",
+        "9": "Polimodal completo",
+        "10": "Terciario no universitario incompleto",
+        "11": "Terciario no universitario completo",
+        "12": "Universitario incompleto",
+        "13": "Universitario completo",
+        "14": "Posgrado",
+        "15": "Ns/Nc"
+    },
+    "D.4": {
+        "1": "Público",
+        "2": "Privado",
+        "3": "Ns/Nc"
+    },
+    "D.5": {
+        "1": "Si",
+        "2": "No"
+    },
+    "D.6": {
+        "1": "Cuidado del cuerpo y la salud",
+        "2": "Salud sexual y reproductiva (anticoncepción, enfermedades de transmisión sexual; prevención)",
+        "3": "Respeto por la diversidad sexual",
+        "4": "Violencia de géneros, su prevención",
+        "5": "Ejercicio de derechos de niñes y jóvenes",
+        "6": "Familias, amor, afectividad"
+    },
+    "D.7": {
+        "1": "Necesitaba trabajar",
+        "2": "Finalizó estudios",
+        "3": "No podía pagar los gastos",
+        "4": "Tenía que cuidar a niños/ otras personas del hogar",
+        "5": "Por distancia/ falta de transporte",
+        "6": "No hay oferta/ no tiene lugar cercano donde ir",
+        "7": "Embarazo",
+        "8": "Falta de interés",
+        "9": "No había necesidad (sólo para menores de 0 a 3 años)",
+        "10": "Dificultades en el aprendizaje/ le costaba mucho estudiar",
+        "11": "Problemas de salud",
+        "12": "Otro (Especificar)",
+        "13": "Ns/Nc"
+    },
+    "E.1": {
+        "1": "Obra social (excluye PAMI)",
+        "2": "Mutual o prepaga",
+        "3": "Plan Nacer/ Plan Sumar",
+        "4": "Incluir Salud (ex PROFE)",
+        "5": "Servicio de emergencia",
+        "6": "PAMI",
+        "7": "Ninguna",
+        "8": "Otros",
+        "9": "NS/NC"
+    },
+    "E.2": {
+        "1": "Si",
+        "2": "No",
+        "3": "Ns/Nc"
+    },
+    "E.3": {
+        "1": "Se sentía mal",
+        "2": "Sufrió un accidente (caída, quemadura, etc)",
+        "3": "Está en tratamiento",
+        "4": "Control de embarazo/ post-parto",
+        "5": "Control sin estar enfermo",
+        "6": "NS/NC"
+    },
+    "E.4": {
+        "1": "Si",
+        "2": "No",
+        "3": "Ns/Nc"
+    },
+    "E.5": {
+        "1": "No tenía tiempo",
+        "2": "No tenía dinero",
+        "3": "No tenía medio de transporte",
+        "4": "Pidió turno y todavía no lo atendieron",
+        "5": "No le pareció importante",
+        "6": "Otros",
+        "7": "Ns/Nc"
+    },
+    "E.6": {
+        "1": "Enfermedades del corazón (ataque cardíaco, infarto, otras)",
+        "2": "Accidente cerebro vascular (ACV) o derrame",
+        "3": "Enfermedades pulmonares, (EPOC), enfisema, asma o bronquitis crónica",
+        "4": "Enfermedad renal, sin incluir cálculos renales, infecciones urinarias o incontinencia",
+        "5": "Diabetes",
+        "6": "Hipertensión o presión alta regular",
+        "7": "Artritis, artrosis o reumatismo",
+        "8": "Depresión, ansiedad u otra enfermedad psiquiátrica",
+        "9": "Trastornos de alimentación (obesidad, bulimia, anorexia, otros)",
+        "10": "Colesterol alto",
+        "11": "Enfermedades de transmisión sexual (ETS)",
+        "12": "Chagas",
+        "13": "Cáncer",
+        "14": "VIH",
+        "15": "Hipo - hipertiroidismo",
+        "16": "No le diagnosticaron ninguna",
+        "17": "Otra",
+        "18": "Ns/Nc"
+    },
+    "E.7": {
+        "1": "Se los dan gratis",
+        "2": "Los compra con descuento / paga sólo una parte",
+        "3": "Los compra sin descuento / paga la totalidad",
+        "4": "No los puede comprar por falta de dinero",
+        "5": "No los compra por otros motivos",
+        "6": "No necesita",
+        "7": "Ns/Nc"
+    },
+    "E.8": {
+        "1": "Si",
+        "2": "No",
+        "3": "Ns/Nc"
+    },
+    "E.9": null,
+    "E.10": {
+        "1": "Si",
+        "2": "No"
+    },
+    "E.11": null,
+    "E.12": null,
+    "E.13": {
+        "1": "Ver, aún con anteojos o lentes puestos?",
+        "2": "Oír, aún con audífonos?",
+        "3": "Hablar o emitir palabra (excepto por dificultad auditiva)?",
+        "4": "Caminar o subir escaleras?",
+        "5": "Agarrar objetos y/o abrir recipientes con las manos?",
+        "6": "Entender y/o aprender y/o relacionarse?",
+        "7": "Ninguna"
+    },
+    "E.14": {
+        "1": "Si",
+        "2": "No",
+        "3": "Ns/Nc"
+    },
+    "E.15": {
+        "1": "No lo necesita / no le parece importante",
+        "2": "Lo pidió pero no se lo otorgaron",
+        "3": "Lo pidió pero está en trámite",
+        "4": "Lo extravió",
+        "5": "Es muy difícil gestionarlo",
+        "6": "No sabe que existe/ no sabe para qué sirve",
+        "7": "Otro",
+        "8": "NS/NC"
+    },
+
+    "E.16": {
+        "1": "Diariamente",
+        "2": "Algunos días",
+        "3": "Fines de semana",
+        "4": "Nunca",
+        "5": "NS/NC"
+    },
+    "E.17": {
+        "1": "Si",
+        "2": "No",
+        "3": "Ns/Nc"
+    },
+    "E.18": {
+        "1": "Sí",
+        "2": "No",
+        "3": "Ns/Nc"
+    },
+    "E.19": {
+        "1": "Sí",
+        "2": "No",
+        "3": "Ns/Nc"
+    },
+    "E.20": {
+        "1": "Sí",
+        "2": "No",
+        "3": "Ns/Nc"
+    },
+    "E.21": {
+        "1": "Sí",
+        "2": "No",
+        "3": "Ns/Nc"
+    },
+    "E.22": {
+        "1": "Sí",
+        "2": "No",
+        "3": "Ns/Nc"
+    },
+    "E.23": {
+        "1": "Sí",
+        "2": "No",
+        "3": "Ns/Nc"
+    },
+    "E.24": {
+        "1": "Sí",
+        "2": "No",
+        "3": "Ns/Nc"
+    },
+    "E.25": {
+        "1": "Sí",
+        "2": "No",
+        "3": "Ns/Nc"
+    },
+    "E.26": {
+        "1": "Fácil",
+        "2": "Dificil",
+        "3": "No podría",
+        "4": "Ns/Nc"
+    },
+    "E.27": {
+        "1": "Fácil",
+        "2": "Dificil",
+        "3": "No podría",
+        "4": "Ns/Nc"
+    },
+    "E.28": {
+        "1": "Fácil",
+        "2": "Dificil",
+        "3": "No podría",
+        "4": "Ns/Nc"
+    },
+    "E.29": {
+        "1": "Fácil",
+        "2": "Dificil",
+        "3": "No podría",
+        "4": "Ns/Nc"
+    },
+    "E.30": {
+        "1": "Ningún riesgo",
+        "2": "Riesgo leve",
+        "3": "Riesgo moderado",
+        "4": "Riesgo grave",
+        "5": "NS/NC"
+    },
+    "E.31": {
+        "1": "Ningún riesgo",
+        "2": "Riesgo leve",
+        "3": "Riesgo moderado",
+        "4": "Riesgo grave",
+        "5": "NS/NC"
+    },
+    "E.32": {
+        "1": "Ningún riesgo",
+        "2": "Riesgo leve",
+        "3": "Riesgo moderado",
+        "4": "Riesgo grave",
+        "5": "NS/NC"
+    },
+    "E.33": {
+        "1": "Ningún riesgo",
+        "2": "Riesgo leve",
+        "3": "Riesgo moderado",
+        "4": "Riesgo grave",
+        "5": "NS/NC"
+    },
+    "E.34": {
+        "1": "Ningún riesgo",
+        "2": "Riesgo leve",
+        "3": "Riesgo moderado",
+        "4": "Riesgo grave",
+        "5": "NS/NC"
+    },
+    "E.35": {
+        "1": "Ningún riesgo",
+        "2": "Riesgo leve",
+        "3": "Riesgo moderado",
+        "4": "Riesgo grave",
+        "5": "NS/NC"
+    },
+    "E.36": {
+        "1": "Ningún riesgo",
+        "2": "Riesgo leve",
+        "3": "Riesgo moderado",
+        "4": "Riesgo grave",
+        "5": "NS/NC"
+    },
+    "E.37": {
+        "1": "Ningún riesgo",
+        "2": "Riesgo leve",
+        "3": "Riesgo moderado",
+        "4": "Riesgo grave",
+        "5": "NS/NC"
+    },
+    "E.38": {
+        "1": "Ningún riesgo",
+        "2": "Riesgo leve",
+        "3": "Riesgo moderado",
+        "4": "Riesgo grave",
+        "5": "NS/NC"
+    },
+    "E.39": {
+        "1": "Ningún riesgo",
+        "2": "Riesgo leve",
+        "3": "Riesgo moderado",
+        "4": "Riesgo grave",
+        "5": "NS/NC"
+    },
+    "E.40": {
+        "1": "Ningún riesgo",
+        "2": "Riesgo leve",
+        "3": "Riesgo moderado",
+        "4": "Riesgo grave",
+        "5": "NS/NC"
+    },
+    "E.41": {
+        "1": "Ningún riesgo",
+        "2": "Riesgo leve",
+        "3": "Riesgo moderado",
+        "4": "Riesgo grave",
+        "5": "NS/NC"
+    },
+    "E.42": {
+        "1": "Ningún riesgo",
+        "2": "Riesgo leve",
+        "3": "Riesgo moderado",
+        "4": "Riesgo grave",
+        "5": "NS/NC"
+    },
+    "E.43": {
+        "1": "Ningún riesgo",
+        "2": "Riesgo leve",
+        "3": "Riesgo moderado",
+        "4": "Riesgo grave",
+        "5": "NS/NC"
+    },
+    "E.44": {
+        "1": "Ningún riesgo",
+        "2": "Riesgo leve",
+        "3": "Riesgo moderado",
+        "4": "Riesgo grave",
+        "5": "NS/NC"
+    },
+
+    "F.1": {
+        "1": "Si",
+        "2": "No",
+        "3": "Ns/Nc"
+    },
+    "F.2": null,
+    "F.3": {
+        "1": "Sí",
+        "2": "Le hubiese gustado, pero no podía trabajar más",
+        "3": "No desea trabajar más horas",
+        "4": "NS/NC"
+    },
+    "F.4": {
+        "1": "Si",
+        "2": "No",
+        "3": "Ns/Nc"
+    },
+    "F.5": {
+        "1": "Patrón o empleador",
+        "2": "Trabajador por cuenta propia solo",
+        "3": "Trabajador por cuenta propia asociado",
+        "4": "Obrero o empleado del sector privado (asalariado)",
+        "5": "Obrero o empleado del sector público (asalariado)",
+        "6": "Servicio doméstico",
+        "7": "Trabajador sin remuneración",
+        "8": "Titular de programa de empleo (con prestación laboral/ comunitaria)",
+        "9": "NS/NC"
+    },
+    "F.6": {
+        "1": "Permanente",
+        "2": "Temporario (plazo fijo/ obra)",
+        "3": "Changa",
+        "4": "Duración desconocida (inestable)",
+        "5": "NS/NC"
+    },
+    "F.7": {
+        "1": "Le descuentan",
+        "2": "Aporta como monotributista o autónomo",
+        "3": "Es monotributista social",
+        "4": "Ni le descuentan ni aporta",
+        "5": "NS/NC"
+    },
+    "F.8": {
+        "1": "Si",
+        "2": "No",
+        "3": "Ns/Nc"
+    },
+    "F.9": {
+        "1": "Menos de un mes",
+        "2": "De 1 a 3 meses",
+        "3": "Más de 3 a 6 meses",
+        "4": "Más de 6 meses a 1 año",
+        "5": "Más de 1 año",
+        "6": "NS/NC"
+    },
+    "F.10": {
+        "1": "Espera respuesta de un empleador",
+        "2": "Espera comienzo de un nuevo trabajo (trabajo estacional)",
+        "3": "Es estudiante/ está capacitándose",
+        "4": "Motivos de edad (menor)",
+        "5": "Se dedica a quehaceres del hogar/ cuida personas en el hogar",
+        "6": "Es discapacitado",
+        "7": "Está enfermo",
+        "8": "Cree no poder encontrarlo/ no hay",
+        "9": "No tiene dinero para viajar",
+        "10": "Ya tiene trabajo.",
+        "11": "Otro",
+        "12": "NS/NC"
+    },
+
+    "G.1": {
+        "1": "Sí, estoy satisfecho",
+        "2": "No, debería mejorar",
+        "3": "Ns/NC"
+    },
+    "G.2": {
+        "1": "Sí, estoy satisfecho",
+        "2": "No, debería mejorar",
+        "3": "Ns/NC"
+    },
+    "G.3": {
+        "1": "Sí, estoy satisfecho",
+        "2": "No, debería mejorar",
+        "3": "Ns/NC"
+    },
+    "G.4": {
+        "1": "Sí, estoy satisfecho",
+        "2": "No, debería mejorar",
+        "3": "Ns/NC"
+    },
+    "G.5": {
+        "1": "Sí, estoy satisfecho",
+        "2": "No, debería mejorar",
+        "3": "Ns/NC"
+    },
+    "G.6": {
+        "1": "Sí, estoy satisfecho",
+        "2": "No, debería mejorar",
+        "3": "Ns/NC"
+    },
+    "G.7": null,
+    "G.8": null,
+    "G.9": {
+        "1": "Si",
+        "2": "No",
+        "3": "Ns/Nc"
+    },
+    "G.10": {
+        "1": "Si",
+        "2": "No",
+        "3": "Ns/Nc"
+    },
+    "G.11": {
+        "1": "Si",
+        "2": "No",
+        "3": "Ns/Nc"
+    },
+    "G.12": {
+        "1": "Si",
+        "2": "No",
+        "3": "Ns/Nc"
+    },
+    "G.13": {
+        "1": "Si",
+        "2": "No",
+        "3": "Ns/Nc"
+    },
+    "G.14": {
+        "1": "Si",
+        "2": "No",
+        "3": "Ns/Nc"
+    },
+    "G.15": {
+        "1": "Si",
+        "2": "No",
+        "3": "Ns/Nc"
+    },
+    "G.16": {
+        "1": "Si",
+        "2": "No",
+        "3": "Ns/Nc"
+    },
+    "H.1": null,
+    "H.2": null,
+    "H.3": null,
+    "H.4": null,
+    "H.5": null,
+    "H.6": null
+}

@@ -2,7 +2,7 @@
 
 Relevamientos App is a survey application built using the Kivy framework. It allows users to perform surveys by selecting different domiciles and answering a set of predefined questions and answers.
 
-<img src="https://github.com/ecuracosta/relevamientos_app/assets/47532757/90326d9e-6e37-44f2-89a2-dd5502878816" width="400" height="300" />
+<img src="https://github.com/ecuracosta/relevamientos_app/assets/47532757/90326d9e-6e37-44f2-89a2-dd5502878816" height="400" />
 
 ## Description
 

@@ -3,8 +3,11 @@ from kivy.uix.screenmanager import Screen
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.label import Label
 from kivy.app import App
-import time
 from kivy.uix.widget import Widget
+import requests
+import keyring
+import os
+import json
 
 class SyncScreen(Screen):
 
@@ -23,40 +26,47 @@ class SyncScreen(Screen):
         sync_button = Button(text='Iniciar', size_hint_y=None, height=50)
         sync_button.bind(on_press=self.start_sync)
         layout.add_widget(sync_button)
+        layout.add_widget(Widget(size_hint_y=None, height=50))
+
+        # Botón para volver al menu
+        sync_button = Button(text='Regresar al menu principal', size_hint_y=None, height=50)
+        sync_button.bind(on_press=self.back_to_menu)
+        layout.add_widget(sync_button)
+        layout.add_widget(Widget(size_hint_y=None, height=50))
 
         self.add_widget(layout)
 
+    def read_all_surveys_from_file(self):
+        file_path = 'completed_surveys.json'
+
+        if os.path.exists(file_path):
+            with open(file_path, 'r') as file:
+                return json.load(file)
+        return []
+
     def start_sync(self, instance):
         # Actualizar el estado
-        self.status_label.text = "Sincronización en curso..."
+        self.status_label.text = "Sincronización en curso, por favor espere..."
 
         # Recuperar el token
         token = keyring.get_password("relevamientos_app", "usuario_token")
         # URL de la API
         url = "https://api-encuestas-mds.unaj.edu.ar/create"
-        # ACA VA UN for
-        # Datos que deseas enviar en el cuerpo de la solicitud POST
-        data = {'type': 1, "answers": {"A2": "1"}}
+        # Headers
         headers = {'Authorization': 'Bearer ' + token}
-        # Realiza la solicitud POST utilizando requests
-        response = requests.post(url, json=data, headers=headers)
 
-        # Verifica el código de estado de la respuesta
-        if response.status_code == 200:
-            print('Solicitud POST exitosa')
-            # Establecer y guardar el token
-            keyring.set_password("relevamientos_app", "usuario_token", response.text["token"])
-        elif response.status_code == 401:
-            pass  # TOKEN VENCIDO
-        else:
-            print('Error en la solicitud POST:', response.status_code)
-        print(response.text)
+        # Iterate over each completed survey
+        for survey in self.read_all_surveys_from_file():
+            # Realiza la solicitud POST utilizando requests
+            survey_send = {"type": 1, "answers": survey}
+            response = requests.post(url, json=survey_send, headers=headers)
+            # Verifica el código de estado de la respuesta
+            if response.status_code == 201:
+                self.status_label.text = "Sincronización completada"
+            else:
+                json_response = json.loads(response.text)
+                self.status_label.text = "Error response " + str(response.status_code) + ":\n" + json_response["error"]
 
-        # Actualizar el estado
-        self.status_label.text = "Sincronización completada."
-
-        # Simulación de una operación de 3 segundos
-        time.sleep(3)
-
+    def back_to_menu(self, instance):
         app = App.get_running_app()
         app.root.current = 'user_menu'

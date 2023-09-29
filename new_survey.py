@@ -40,8 +40,7 @@ class NewSurvey(Screen):
         survey_screen = app.root.get_screen('survey_questions')
         if not hasattr(survey_screen, 'responses'):
             survey_screen.responses = {}
-        survey_screen.responses["0.0"] = address
-
+        #survey_screen.responses["A0"] = address
         app.root.current = 'survey_questions'
 
     def back_to_menu(self, instance):

@@ -35,7 +35,6 @@ class UserMenu(Screen):
         self.add_widget(layout)
 
     def realizar_encuesta(self, instance):
-        from kivy.app import App
         app = App.get_running_app()
         app.root.current = 'new_survey'
 

@@ -6,6 +6,7 @@ from kivy.uix.textinput import TextInput
 from kivy.uix.screenmanager import Screen, ScreenManager
 from kivy.app import App
 import json
+import os
 from kivy.uix.widget import Widget
 
 
@@ -47,10 +48,10 @@ class SurveyQuestions(Screen):
         self.main_layout.add_widget(Widget(size_hint_y=None, height=50))
 
         if self.answers[self.current_question_key]:
-            spinner_values = [str(val) for val in self.answers[self.current_question_key].values()]
-            self.spinner = Spinner(text='Seleccione una opción', values=spinner_values)
+            self.spinner_values_keys = list(self.answers[self.current_question_key].keys())
+            self.spinner_values = [str(val) for val in self.answers[self.current_question_key].values()]
+            self.spinner = Spinner(text='Seleccione una opción', values=self.spinner_values)
             question_layout.add_widget(self.spinner)
-
         else:
             self.text_input = TextInput(hint_text='Ingrese su respuesta', multiline=False)
             question_layout.add_widget(self.text_input)
@@ -78,33 +79,51 @@ class SurveyQuestions(Screen):
         self.main_layout.add_widget(Widget(size_hint_x=None, width=50))
 
     def next_question(self, instance):
-        self.store_response()  # Almacenar la respuesta antes de pasar a la siguiente pregunta
-        self.current_index += 1
-        self.show_question(self.current_index)
+        self.store_response()
+        if self.responses[self.current_question_key]:
+            self.current_index += 1
+            if self.current_index >= len(self.question_keys):
+                self.finish_survey(instance)
+            else:
+                self.show_question(self.current_index)
 
     def prev_question(self, instance):
-        self.store_response()  # Almacenar la respuesta antes de volver a la pregunta anterior
+        self.store_response()
         self.current_index -= 1
         self.show_question(self.current_index)
 
     def store_response(self):
         if self.answers[self.current_question_key]:
-            self.responses[self.current_question_key] = self.spinner.text
+            try:
+                selected_index = self.spinner_values.index(self.spinner.text)
+                selected_key = self.spinner_values_keys[selected_index]
+                self.responses[self.current_question_key] = selected_key
+            except ValueError:
+                self.responses[self.current_question_key] = None
         else:
             self.responses[self.current_question_key] = self.text_input.text
 
-    def finish_survey(self, instance):
-        self.store_response()
-        print("Respuestas:", self.responses)
+    def append_survey_to_file(self, data):
+        file_path = 'completed_surveys.json'
+        all_surveys = []
 
+        # Check if the file already exists
+        if os.path.exists(file_path):
+            with open(file_path, 'r') as file:
+                all_surveys = json.load(file)
+
+        all_surveys.append(data)
+
+        # Always write the updated data back to the file
+        with open(file_path, 'w') as file:
+            json.dump(all_surveys, file, indent=4)
+
+    def finish_survey(self, instance):
+        self.append_survey_to_file(self.responses)
         app = App.get_running_app()
         user_menu_screen = app.root.get_screen('user_menu')
         user_menu_screen.completed_surveys.append(self.responses)
-
-        print("Encuestas completadas:", len(user_menu_screen.completed_surveys))
-
         self.responses.clear()
-
         app.root.current = 'new_survey'
 
     def on_enter(self):

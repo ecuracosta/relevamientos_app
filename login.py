@@ -6,8 +6,6 @@ from kivy.uix.screenmanager import Screen
 from kivy.uix.image import Image
 from kivy.app import App
 from kivy.uix.widget import Widget
-
-
 import keyring
 import requests
 import json

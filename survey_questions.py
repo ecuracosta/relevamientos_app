@@ -9,11 +9,10 @@ import json
 import os
 from kivy.uix.widget import Widget
 
-
 class SurveyQuestions(Screen):
     def __init__(self, **kwargs):
         super(SurveyQuestions, self).__init__(**kwargs)
-        self.responses = {}  # Diccionario para almacenar respuestas
+        self.responses = {}
 
         # Create a main BoxLayout to add to the Screen
         self.main_layout = BoxLayout(orientation='vertical')
@@ -119,6 +118,7 @@ class SurveyQuestions(Screen):
             json.dump(all_surveys, file, indent=4)
 
     def finish_survey(self, instance):
+        self.store_response()
         self.append_survey_to_file(self.responses)
         app = App.get_running_app()
         user_menu_screen = app.root.get_screen('user_menu')

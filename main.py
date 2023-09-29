@@ -12,11 +12,11 @@ from sync import SyncScreen
 class SurveyApp(App):
     def build(self):
 
-        # Establecer propiedades por defecto para todos los Labels
+        # Labels default properties
         Label.font_size = '24'
         Label.color = (0.15, 0.6, 0.85, 1)
 
-        # Establecer propiedades por defecto para todos los Buttons
+        # Buttons default properties
         Button.font_size = '20'
         Button.background_color = (0.65, 0.65, 0.65, 1)
 
@@ -25,7 +25,7 @@ class SurveyApp(App):
 
         sm = ScreenManager()
 
-        # Agrega las pantallas al ScreenManager sin pasar el argumento 'name'
+        # Create screens
         sm.add_widget(LoginScreen(name='login_screen'))
         sm.add_widget(UserMenu(name='user_menu'))
         sm.add_widget(NewSurvey(name='new_survey'))

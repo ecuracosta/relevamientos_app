@@ -28,7 +28,6 @@ class NewSurvey(Screen):
         layout.add_widget(btn)
         layout.add_widget(Widget(size_hint_y=None, height=50))
 
-        # Botón para usar el mismo domicilio que la encuesta anterior
         back_to_menu_btn = Button(text='Regresar al menu principal', size_hint_y=None, height=50)
         back_to_menu_btn.bind(on_press=self.back_to_menu)
         layout.add_widget(back_to_menu_btn)
@@ -40,7 +39,7 @@ class NewSurvey(Screen):
         survey_screen = app.root.get_screen('survey_questions')
         if not hasattr(survey_screen, 'responses'):
             survey_screen.responses = {}
-        #survey_screen.responses["A0"] = address
+        survey_screen.responses["A0"] = address
         app.root.current = 'survey_questions'
 
     def back_to_menu(self, instance):

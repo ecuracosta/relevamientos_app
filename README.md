@@ -19,7 +19,7 @@ The Relevamientos App is designed to simplify the process of conducting surveys 
 
 # Building the APK using Buildozer
 
-*Prerequisites:* Cython, Java (OpenJDK 11 recommended), Python and Buildozer (`.spec` file is provided)
+*Prerequisites:* Cython (0.29.3), Java (OpenJDK 17), Python and Buildozer (`.spec` file is provided)
 
 *Run Buildozer:*
 ```

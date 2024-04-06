@@ -13,11 +13,11 @@ class SurveyApp(App):
     def build(self):
 
         # Labels default properties
-        Label.font_size = '24'
+        Label.font_size = '16'
         Label.color = (0.15, 0.6, 0.85, 1)
 
         # Buttons default properties
-        Button.font_size = '20'
+        Button.font_size = '16'
         Button.background_color = (0.65, 0.65, 0.65, 1)
 
         # Background

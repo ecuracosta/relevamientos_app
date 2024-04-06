@@ -8,6 +8,17 @@ Relevamientos App is a survey application built using the Kivy framework. It all
 
 The Relevamientos App is designed to simplify the process of conducting surveys by providing an intuitive user interface. Users can log in with their username and password, enter a domicile and answer a series of survey questions. The app then can synchronize with a database to upload the survey results.
 
+- `login.py`: Handles the user authentication process and token management for the application.
+- `main.py`: Initializes the application and sets up the screen manager to switch between different screens.
+- `menu.py`: Manages the main menu options, allowing the user to choose between starting a new survey or synchronize.
+- `new_survey.py`: Handles the input of the domicile information and starts a new survey.
+- `survey_questions.py`: Presents survey questions to the user and saves the responses to `completed_surveys.json`.
+- `sync.py`: Synchronizes the completed surveys (`completed_surveys.json`) with a remote database.
+- `questions.json`: Contains the survey questions to be presented to the user.
+- `answers.json`: Contains the possible answers for each survey question.
+- `conditions.json`: Defines the conditions under which certain questions should be shown based on previous answers.
+- `completed_surveys.json`: Stores the completed surveys with the user's responses.
+
 **Please note that this project is currently under development and may contain incomplete features and bugs.**
 
 ## Features

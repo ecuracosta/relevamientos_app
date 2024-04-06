@@ -27,6 +27,9 @@ class SurveyQuestions(Screen):
         with open('answers.json', 'r') as f:
             self.answers = json.load(f)
 
+        with open('conditions.json', 'r') as f:
+            self.conditions = json.load(f)
+
         self.current_question_key = None
         self.question_keys = list(self.questions.keys())
         self.current_index = 0
@@ -38,6 +41,20 @@ class SurveyQuestions(Screen):
 
         if index < 0 or index >= len(self.question_keys):
             return
+
+        # Check if the current question has any conditions
+        question_key = self.question_keys[index]
+        if question_key in self.conditions:
+            condition = self.conditions[question_key]
+            dependent_question_key = condition["depends_on"]
+            if dependent_question_key in self.responses:
+                dependent_answer = self.responses[dependent_question_key]
+                if self.answers[dependent_question_key][dependent_answer] not in condition["value"]:
+                    # Skip this question and move to the next one
+                    self.current_index += 1
+                    if self.current_index < len(self.question_keys):
+                        self.show_question(self.current_index)
+                    return
 
         self.current_question_key = self.question_keys[index]
         self.current_index = index

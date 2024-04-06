@@ -1,0 +1,78 @@
+{
+    "B8": {
+        "depends_on": "B7",
+        "value": ["Dentro de la vivienda", "Fuera de la vivienda"]
+    },
+    "B9": {
+        "depends_on": "B7",
+        "value": ["Dentro de la vivienda", "Fuera de la vivienda"]
+    },
+    "D3": {
+        "depends_on": "D2",
+        "value": ["Va a la escuela, universidad o institución \nde cuidado infantil","No va pero fue"]
+    },
+    "D4": {
+        "depends_on": "D2",
+        "value": ["Va a la escuela, universidad o institución \nde cuidado infantil","No va pero fue"]
+    },
+    "D5": {
+    "depends_on": "D2",
+    "value": ["Va a la escuela, universidad o institución \nde cuidado infantil","No va pero fue"]
+    },
+    "D6": {
+    "depends_on": "D5",
+    "value": ["Si"]
+    },
+    "D7": {
+    "depends_on": "D3",
+    "value": ["Primario incompleto","EGB incompleto","Secundario incompleto","Polimodal incompleto","Terciario no universitario incompleto","Universitario incompleto"]
+    },
+    "E3": {
+    "depends_on": "E2",
+    "value": ["Si"]
+    },
+    "E5": {
+    "depends_on": "E4",
+    "value": ["Si"]
+    },
+    "E9": {
+    "depends_on": "E8",
+    "value": ["Si"]
+    },
+    "E11": {
+    "depends_on": "E8",
+    "value": ["Si"]
+    },
+    "E12": {
+    "depends_on": "E8",
+    "value": ["Si"]
+    },
+    "E14": {
+    "depends_on": "E13",
+    "value": ["Ver, aún con anteojos o lentes puestos?","Oír, aún con audífonos?","Hablar o emitir palabra (excepto por dificultad auditiva)?","Caminar o subir escaleras?","Agarrar objetos y/o abrir recipientes con las manos?","Entender y/o aprender y/o relacionarse?"]
+    },
+    "E15": {
+    "depends_on": "E14",
+    "value": ["Si"]
+    },
+    "E22": {
+    "depends_on": "E18",
+    "value": ["Si"]
+    },
+    "E23": {
+    "depends_on": "E19",
+    "value": ["Si"]
+    },
+    "E24": {
+    "depends_on": "E20",
+    "value": ["Si"]
+    },
+    "E25": {
+    "depends_on": "E21",
+    "value": ["Si"]
+    },
+    "F10": {
+    "depends_on": "F8",
+    "value": ["Si"]
+    }
+}

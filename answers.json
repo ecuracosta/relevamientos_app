@@ -164,21 +164,21 @@
         "17": "Otros (Especificar)"
     },
     "C2": {
-        "1": "Sí",
+        "1": "Si",
         "2": "No",
         "3": "Ns/ Nc"
     },
     "C3": {
-        "1": "Comida/ vianda en comedor comunitario",
+        "1": "Comida/vianda en comedor comunitario",
         "2": "Merienda o desayuno en un espacio comunitario",
-        "3": "Comida/ vianda en comedor escolar",
+        "3": "Comida/vianda en comedor escolar",
         "4": "Merienda o desayuno en un comedor escolar",
         "5": "Anticonceptivos",
         "6": "Libros y/o útiles escolares",
         "7": "Ninguno"
     },
     "D1": {
-        "1": "Sí",
+        "1": "Si",
         "2": "No",
         "3": "Ns/Nc"
     },
@@ -216,7 +216,7 @@
     },
     "D6": {
         "1": "Cuidado del cuerpo y la salud",
-        "2": "Salud sexual y reproductiva (anticoncepción, enfermedades de transmisión sexual; prevención)",
+        "2": "Salud sexual y reproductiva",
         "3": "Respeto por la diversidad sexual",
         "4": "Violencia de géneros, su prevención",
         "5": "Ejercicio de derechos de niñes y jóvenes",
@@ -354,42 +354,42 @@
         "3": "Ns/Nc"
     },
     "E18": {
-        "1": "Sí",
+        "1": "Si",
         "2": "No",
         "3": "Ns/Nc"
     },
     "E19": {
-        "1": "Sí",
+        "1": "Si",
         "2": "No",
         "3": "Ns/Nc"
     },
     "E20": {
-        "1": "Sí",
+        "1": "Si",
         "2": "No",
         "3": "Ns/Nc"
     },
     "E21": {
-        "1": "Sí",
+        "1": "Si",
         "2": "No",
         "3": "Ns/Nc"
     },
     "E22": {
-        "1": "Sí",
+        "1": "Si",
         "2": "No",
         "3": "Ns/Nc"
     },
     "E23": {
-        "1": "Sí",
+        "1": "Si",
         "2": "No",
         "3": "Ns/Nc"
     },
     "E24": {
-        "1": "Sí",
+        "1": "Si",
         "2": "No",
         "3": "Ns/Nc"
     },
     "E25": {
-        "1": "Sí",
+        "1": "Si",
         "2": "No",
         "3": "Ns/Nc"
     },
@@ -530,7 +530,7 @@
     },
     "F2": null,
     "F3": {
-        "1": "Sí",
+        "1": "Si",
         "2": "Le hubiese gustado, pero no podía trabajar más",
         "3": "No desea trabajar más horas",
         "4": "NS/NC"
@@ -594,32 +594,32 @@
     },
 
     "G1": {
-        "1": "Sí, estoy satisfecho",
+        "1": "Si, estoy satisfecho",
         "2": "No, debería mejorar",
         "3": "Ns/NC"
     },
     "G2": {
-        "1": "Sí, estoy satisfecho",
+        "1": "Si, estoy satisfecho",
         "2": "No, debería mejorar",
         "3": "Ns/NC"
     },
     "G3": {
-        "1": "Sí, estoy satisfecho",
+        "1": "Si, estoy satisfecho",
         "2": "No, debería mejorar",
         "3": "Ns/NC"
     },
     "G4": {
-        "1": "Sí, estoy satisfecho",
+        "1": "Si, estoy satisfecho",
         "2": "No, debería mejorar",
         "3": "Ns/NC"
     },
     "G5": {
-        "1": "Sí, estoy satisfecho",
+        "1": "Si, estoy satisfecho",
         "2": "No, debería mejorar",
         "3": "Ns/NC"
     },
     "G6": {
-        "1": "Sí, estoy satisfecho",
+        "1": "Si, estoy satisfecho",
         "2": "No, debería mejorar",
         "3": "Ns/NC"
     },

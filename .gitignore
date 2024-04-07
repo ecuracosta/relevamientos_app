@@ -1,3 +1,5 @@
 .idea/
 __pycache__/
 completed_surveys.json
+.buildozer/
+bin/

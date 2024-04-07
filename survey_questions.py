@@ -5,6 +5,7 @@ from kivy.uix.button import Button
 from kivy.uix.textinput import TextInput
 from kivy.uix.screenmanager import Screen, ScreenManager
 from kivy.app import App
+from kivy.uix.popup import Popup
 import json
 import os
 from kivy.uix.widget import Widget
@@ -69,7 +70,7 @@ class SurveyQuestions(Screen):
             self.spinner = Spinner(text='Seleccione una opción', values=self.spinner_values)
             question_layout.add_widget(self.spinner)
         else:
-            self.text_input = TextInput(hint_text='Ingrese su respuesta', multiline=False)
+            self.text_input = TextInput(hint_text='Ingrese su respuesta')
             question_layout.add_widget(self.text_input)
         self.main_layout.add_widget(Widget(size_hint_y=None, height=50))
 
@@ -77,18 +78,18 @@ class SurveyQuestions(Screen):
 
         button_layout = BoxLayout()
 
-        prev_button = Button(text='Anterior', size_hint_y=None, height=50)
+        prev_button = Button(text='Anterior')
         prev_button.bind(on_press=self.prev_question)
         button_layout.add_widget(prev_button)
         self.main_layout.add_widget(Widget(size_hint_x=None, width=50))
 
-        next_button = Button(text='Siguiente', size_hint_y=None, height=50)
+        next_button = Button(text='Siguiente')
         next_button.bind(on_press=self.next_question)
         button_layout.add_widget(next_button)
         self.main_layout.add_widget(Widget(size_hint_x=None, width=50))
 
-        finish_button = Button(text='Finalizar', size_hint_y=None, height=50)
-        finish_button.bind(on_press=self.finish_survey)
+        finish_button = Button(text='Finalizar')
+        finish_button.bind(on_press=self.confirm_finish)
         button_layout.add_widget(finish_button)
 
         self.main_layout.add_widget(button_layout)
@@ -113,11 +114,39 @@ class SurveyQuestions(Screen):
             try:
                 selected_index = self.spinner_values.index(self.spinner.text)
                 selected_key = self.spinner_values_keys[selected_index]
-                self.responses[self.current_question_key] = selected_key
+                if selected_key != "Seleccione una opción":
+                    self.responses[self.current_question_key] = selected_key
             except ValueError:
-                self.responses[self.current_question_key] = None
+                pass  # No se seleccionó ninguna opción
         else:
-            self.responses[self.current_question_key] = self.text_input.text
+            if self.text_input.text.strip():
+                self.responses[self.current_question_key] = self.text_input.text
+
+    def confirm_finish(self, instance):
+        # Crear un Popup de confirmación
+        content = BoxLayout(orientation='vertical')
+        content.add_widget(Label(text='¿Está seguro de que desea finalizar la encuesta?'))
+        yes_button = Button(text='Sí', size_hint_y=None, height=50)
+        yes_button.bind(on_press=self.finish_survey)
+        no_button = Button(text='No', size_hint_y=None, height=50)
+        no_button.bind(on_press=lambda x: self.popup.dismiss())
+        button_layout = BoxLayout(size_hint_y=None, height=50)
+        button_layout.add_widget(yes_button)
+        button_layout.add_widget(no_button)
+        content.add_widget(button_layout)
+
+        self.popup = Popup(title='Confirmación', content=content, size_hint=(0.8, 0.4))
+        self.popup.open()
+
+    def finish_survey(self, instance):
+        self.store_response()
+        self.append_survey_to_file(self.responses)
+        app = App.get_running_app()
+        user_menu_screen = app.root.get_screen('user_menu')
+        user_menu_screen.completed_surveys.append(self.responses)
+        self.responses.clear()
+        app.root.current = 'new_survey'
+        self.popup.dismiss()  # Cerrar el Popup
 
     def append_survey_to_file(self, data):
         file_path = 'completed_surveys.json'
@@ -134,14 +163,6 @@ class SurveyQuestions(Screen):
         with open(file_path, 'w') as file:
             json.dump(all_surveys, file, indent=4)
 
-    def finish_survey(self, instance):
-        self.store_response()
-        self.append_survey_to_file(self.responses)
-        app = App.get_running_app()
-        user_menu_screen = app.root.get_screen('user_menu')
-        user_menu_screen.completed_surveys.append(self.responses)
-        self.responses.clear()
-        app.root.current = 'new_survey'
 
     def on_enter(self):
         self.current_index = 0

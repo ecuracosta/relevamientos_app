@@ -19,16 +19,16 @@ class NewSurvey(Screen):
         layout.add_widget(Label(text='Ingrese el domicilio'))
         layout.add_widget(Widget(size_hint_y=None, height=50))
 
-        self.address_input = TextInput(hint_text='Dirección', multiline=False)
+        self.address_input = TextInput(hint_text='Dirección')
         layout.add_widget(self.address_input)
         layout.add_widget(Widget(size_hint_y=None, height=50))
 
-        btn = Button(text='Iniciar encuesta', size_hint_y=None, height=50)
+        btn = Button(text='Iniciar encuesta')
         btn.bind(on_press=self.abrir_encuesta)
         layout.add_widget(btn)
         layout.add_widget(Widget(size_hint_y=None, height=50))
 
-        back_to_menu_btn = Button(text='Regresar al menu principal', size_hint_y=None, height=50)
+        back_to_menu_btn = Button(text='Regresar al menu principal')
         back_to_menu_btn.bind(on_press=self.back_to_menu)
         layout.add_widget(back_to_menu_btn)
         layout.add_widget(Widget(size_hint_y=None, height=50))

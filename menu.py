@@ -21,13 +21,13 @@ class UserMenu(Screen):
         layout.add_widget(Widget(size_hint_y=None, height=50))
 
         # Button to start survey
-        btn_start_survey = Button(text='Realizar encuesta', size_hint_y=None, height=50)
+        btn_start_survey = Button(text='Realizar encuesta')
         btn_start_survey.bind(on_press=self.realizar_encuesta)
         layout.add_widget(btn_start_survey)
         layout.add_widget(Widget(size_hint_y=None, height=50))
 
         # Button to sync database
-        btn_sync_db = Button(text='Sincronizar con la base de datos', size_hint_y=None, height=50)
+        btn_sync_db = Button(text='Sincronizar con la base de datos')
         btn_sync_db.bind(on_press=self.sincronizar_bd)
         layout.add_widget(btn_sync_db)
         layout.add_widget(Widget(size_hint_y=None, height=50))

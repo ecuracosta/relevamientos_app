@@ -6,10 +6,14 @@ from kivy.uix.screenmanager import Screen
 from kivy.uix.image import Image
 from kivy.app import App
 from kivy.uix.widget import Widget
-import keyring
 import requests
 import json
 import hashlib
+from jnius import autoclass
+
+# Obtener las clases de Java necesarias
+SharedPreferences = autoclass('android.content.SharedPreferences')
+Context = autoclass('android.content.Context')
 
 class LoginScreen(Screen):
     def __init__(self, **kwargs):
@@ -23,7 +27,7 @@ class LoginScreen(Screen):
         img = Image(
             source='logo.png',
             size_hint_y=None,
-            height=100,
+            height=250,
             keep_ratio=True,
             allow_stretch=True
         )
@@ -31,44 +35,29 @@ class LoginScreen(Screen):
         layout.add_widget(Widget(size_hint_y=None, height=150))
 
         # Label
-        self.welcome_label = Label(
-            text='Aplicación de relevamientos',
-            size_hint_y=None,
-            height=50
-        )
+        self.welcome_label = Label(text='Aplicación de relevamientos')
         layout.add_widget(self.welcome_label)
         layout.add_widget(Widget(size_hint_y=None, height=50))
 
-
         # User and Password Input
-        self.username = TextInput(
-            hint_text='Nombre de usuario',
-            size_hint_y=None,
-            height=30
-        )
+        self.username = TextInput(hint_text='Nombre de usuario')
 
-        self.password = TextInput(
-            hint_text='Contraseña',
-            password=True,
-            size_hint_y=None,
-            height=30
-        )
+        self.password = TextInput(hint_text='Contraseña',password=True)
 
         layout.add_widget(self.username)
         layout.add_widget(self.password)
 
         # Login Button
-        btn_login = Button(
-            text='Iniciar sesión',
-            size_hint_y=None,
-            height=50
-        )
+        btn_login = Button(text='Iniciar sesión')
         btn_login.bind(on_press=self.comprobando_usuario)
         layout.add_widget(btn_login)
         layout.add_widget(Widget(size_hint_y=None, height=50))
 
         self.add_widget(layout)
 
+    def get_preferences(self):
+        activity = autoclass('org.kivy.android.PythonActivity').mActivity
+        return activity.getSharedPreferences("relevamientos_app", Context.MODE_PRIVATE)
 
     def hash_password(self, password: str) -> str:
         return hashlib.sha256(password.encode()).hexdigest()
@@ -88,7 +77,6 @@ class LoginScreen(Screen):
         has_internet = self.check_internet_connection()
         if has_internet:
             # Online logic
-
             url = "https://api-encuestas-mds.unaj.edu.ar/login"
             data = {'username': username, 'password': password}
             response = requests.post(url, json=data)
@@ -99,11 +87,14 @@ class LoginScreen(Screen):
                 # Save hashed credentials locally after successful online login
                 hashed_username = self.hash_password(username)
                 hashed_password = self.hash_password(password)
-                keyring.set_password("relevamientos_app", "hashed_username", hashed_username)
-                keyring.set_password("relevamientos_app", "hashed_password", hashed_password)
+                prefs = self.get_preferences()
+                editor = prefs.edit()
+                editor.putString("hashed_username", hashed_username)
+                editor.putString("hashed_password", hashed_password)
                 json_token = json.loads(response.text)
                 if "token" in json_token:
-                    keyring.set_password("relevamientos_app", "usuario_token", json_token["token"])
+                    editor.putString("usuario_token", json_token["token"])
+                    editor.apply()
                     app = App.get_running_app()
                     app.root.current = 'user_menu'
                 else:
@@ -117,11 +108,11 @@ class LoginScreen(Screen):
         else:
             # Offline login logic
             self.welcome_label.text = 'Login offline exitoso'
-            saved_hashed_username = keyring.get_password("relevamientos_app", "hashed_username")
-            saved_hashed_password = keyring.get_password("relevamientos_app", "hashed_password")
+            prefs = self.get_preferences()
+            saved_hashed_username = prefs.getString("hashed_username", None)
+            saved_hashed_password = prefs.getString("hashed_password", None)
 
-            if saved_hashed_username == self.hash_password(username) and saved_hashed_password == self.hash_password(
-                    password):
+            if saved_hashed_username == self.hash_password(username) and saved_hashed_password == self.hash_password(password):
                 app = App.get_running_app()
                 app.root.current = 'user_menu'
             else:

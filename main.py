@@ -2,7 +2,9 @@ from kivy.app import App
 from kivy.uix.label import Label
 from kivy.uix.button import Button
 from kivy.uix.textinput import TextInput
+from kivy.uix.textinput import TextInput
 from kivy.core.window import Window
+from kivy.uix.spinner import Spinner
 from kivy.uix.screenmanager import ScreenManager
 from login import LoginScreen
 from menu import UserMenu
@@ -29,6 +31,12 @@ class SurveyApp(App):
         # Buttons default properties
         TextInput.font_size = NumericProperty(scaled_font_size)
         TextInput.size_hint_y = None
+
+        # Spinner default properties
+        Spinner.font_size = NumericProperty(scaled_font_size)
+        Spinner.background_color = (0.65, 0.65, 0.65, 1)
+        Spinner.size_hint_x = 0.5
+        Spinner.pos_hint = {'center_x': 0.5}
 
         # Background
         Window.clearcolor = (1, 1, 1, 1)

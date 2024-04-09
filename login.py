@@ -27,7 +27,7 @@ class LoginScreen(Screen):
         img = Image(
             source='logo.png',
             size_hint_y=None,
-            height=250,
+            height=150,
             keep_ratio=True,
             allow_stretch=True
         )

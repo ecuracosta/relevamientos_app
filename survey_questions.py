@@ -62,7 +62,7 @@ class SurveyQuestions(Screen):
 
         question_layout = BoxLayout(orientation='vertical')
         question_layout.add_widget(Label(text=self.questions[self.current_question_key]))
-        self.main_layout.add_widget(Widget(size_hint_y=None, height=50))
+        question_layout.add_widget(Widget(size_hint_y=None, height=50))
 
         if self.answers[self.current_question_key]:
             self.spinner_values_keys = list(self.answers[self.current_question_key].keys())
@@ -154,7 +154,8 @@ class SurveyQuestions(Screen):
         user_menu_screen.completed_surveys.append(self.responses)
         self.responses.clear()
         app.root.current = 'new_survey'
-        self.popup.dismiss()  # Cerrar el Popup
+        if hasattr(self, 'popup'):
+            self.popup.dismiss()  # Cerrar el Popup
 
     def append_survey_to_file(self, data):
         file_path = 'completed_surveys.json'

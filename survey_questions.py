@@ -99,10 +99,18 @@ class SurveyQuestions(Screen):
         self.store_response()
         if self.responses[self.current_question_key]:
             self.current_index += 1
-            if self.current_index >= len(self.question_keys):
+            if self.current_question_key == "H6":
                 self.finish_survey(instance)
             else:
                 self.show_question(self.current_index)
+
+    def next_question(self, instance):
+        self.store_response()
+        if self.current_index < len(self.question_keys) - 1:
+            self.current_index += 1
+            self.show_question(self.current_index)
+        else:
+            self.finish_survey(instance)
 
     def prev_question(self, instance):
         self.store_response()
